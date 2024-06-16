@@ -32,7 +32,7 @@ const Index = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
   const [userIconPosition, setUserIconPosition] = useState("left");
-  const [botIconPosition, setBotIconPosition] = useState("left");
+  const [botIconPosition, setBotIconPosition] = useState("right");
 
   useEffect(() => {
     setMessages(mockMessages);
