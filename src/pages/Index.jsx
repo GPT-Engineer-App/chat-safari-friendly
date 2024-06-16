@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import { Box, Button, Container, Input, VStack, Text, HStack } from "@chakra-ui/react";
 import React from "react";
 
@@ -14,9 +14,21 @@ const Message = React.memo(({ message }) => (
   </Box>
 ));
 
+const mockMessages = [
+  { text: "Hello! How can I help you today?", sender: "bot" },
+  { text: "I need some information about your services.", sender: "user" },
+  { text: "Sure! We offer a variety of services including web development, mobile app development, and more.", sender: "bot" },
+  { text: "That's great! Can you tell me more about your web development services?", sender: "user" },
+  { text: "Of course! We specialize in creating responsive and user-friendly websites.", sender: "bot" },
+];
+
 const Index = () => {
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
+
+  useEffect(() => {
+    setMessages(mockMessages);
+  }, []);
 
   const handleSendMessage = useCallback(() => {
     if (inputValue.trim() !== "") {
