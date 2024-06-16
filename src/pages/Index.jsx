@@ -3,7 +3,13 @@ import { Box, Button, Container, Input, VStack, Text, HStack } from "@chakra-ui/
 import React from "react";
 
 const Message = React.memo(({ message }) => (
-  <Box alignSelf={message.sender === "user" ? "flex-end" : "flex-start"} bg={message.sender === "user" ? "blue.100" : "gray.100"} borderRadius="md" p={2} mb={2}>
+  <Box
+    alignSelf={message.sender === "user" ? "flex-start" : "flex-end"}
+    bg={message.sender === "user" ? "blue.100" : "gray.100"}
+    borderRadius="md"
+    p={2}
+    mb={2}
+  >
     <Text>{message.text}</Text>
   </Box>
 ));
