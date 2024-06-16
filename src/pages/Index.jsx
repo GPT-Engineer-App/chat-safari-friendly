@@ -5,7 +5,7 @@ import React from "react";
 
 const Message = React.memo(({ message, userIconPosition, botIconPosition }) => (
   <HStack
-    alignSelf={message.sender === "user" ? "flex-start" : "flex-end"}
+    alignSelf={message.sender === "user" ? (userIconPosition === "left" ? "flex-start" : "flex-end") : (botIconPosition === "left" ? "flex-start" : "flex-end")}
     bg={message.sender === "user" ? "blue.100" : "gray.100"}
     borderRadius="md"
     p={2}
